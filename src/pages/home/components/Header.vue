@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scope>
+<style lang="stylus" scoped>
   @import '~@/assets/css/varStylus.styl';
 
   .header

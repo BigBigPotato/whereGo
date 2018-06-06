@@ -2,8 +2,8 @@
   <div>
     <h4 class="title">热门推荐</h4>
     <ul>
-      <li class="border-bottom clearfix list" v-for="item in itemList" :key="item.id">
-        <img :src="item.ImageUrl" class="list_img" />
+      <li class="border-bottom clearfix list" v-for="item in list" :key="item.id">
+        <img :src="item.imgUrl" class="list_img" />
         <div class="info">
           <p class="info_title font_hidden">{{item.title}}</p>
           <p class="info_desc font_hidden">{{item.desc}}</p>
@@ -17,41 +17,8 @@
 <script>
 export default {
   name: 'indexRecommend',
-  data () {
-    return {
-      itemList: [
-        {
-          id: '001',
-          ImageUrl: 'http://img1.qunarzz.com/sight/p0/201301/11/dd368e9b8629027693835fbb.jpg_200x200_8e79864a.jpg',
-          desc: '大明宫大明宫大明',
-          title: '大明宫'
-        },
-        {
-          id: '002',
-          ImageUrl: 'http://img1.qunarzz.com/sight/p0/201301/11/dd368e9b8629027693835fbb.jpg_200x200_8e79864a.jpg',
-          desc: '大明宫大明宫大明',
-          title: '大明宫'
-        },
-        {
-          id: '003',
-          ImageUrl: 'http://img1.qunarzz.com/sight/p0/201301/11/dd368e9b8629027693835fbb.jpg_200x200_8e79864a.jpg',
-          desc: '大明宫大明宫大明',
-          title: '大明宫'
-        },
-        {
-          id: '004',
-          ImageUrl: 'http://img1.qunarzz.com/sight/p0/201301/11/dd368e9b8629027693835fbb.jpg_200x200_8e79864a.jpg',
-          desc: '大明宫大明宫大明',
-          title: '大明宫'
-        },
-        {
-          id: '005',
-          ImageUrl: 'http://img1.qunarzz.com/sight/p0/201301/11/dd368e9b8629027693835fbb.jpg_200x200_8e79864a.jpg',
-          desc: '大明宫大明宫大明',
-          title: '大明宫'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>

@@ -2,9 +2,9 @@
   <div>
     <h4 class="title">周末去哪儿</h4>
     <ul>
-      <li class="border-bottom clearfix list" v-for="item in itemList" :key="item.id">
+      <li class="border-bottom clearfix list" v-for="item in list" :key="item.id">
         <div class="list_img" >
-          <img :src="item.ImageUrl"/>
+          <img :src="item.imgUrl"/>
         </div>
         <div class="info">
           <p class="info_title font_hidden">{{item.title}}</p>
@@ -18,29 +18,8 @@
 <script>
 export default {
   name: 'indexWeekend',
-  data () {
-    return {
-      itemList: [
-        {
-          id: '001',
-          ImageUrl: 'http://img1.qunarzz.com/sight/source/1505/19/58f233e11df7ef.jpg_r_640x214_6b42c9fc.jpg',
-          desc: '寻长安梦，开启穿越的圆梦之旅',
-          title: '西安必游TOP10'
-        },
-        {
-          id: '002',
-          ImageUrl: 'http://img1.qunarzz.com/sight/source/1505/19/58f233e11df7ef.jpg_r_640x214_6b42c9fc.jpg',
-          desc: '寻长安梦，开启穿越的圆梦之旅',
-          title: '西安必游TOP10'
-        },
-        {
-          id: '003',
-          ImageUrl: 'http://img1.qunarzz.com/sight/source/1505/19/58f233e11df7ef.jpg_r_640x214_6b42c9fc.jpg',
-          desc: '寻长安梦，开启穿越的圆梦之旅',
-          title: '西安必游TOP10'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>

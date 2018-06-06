@@ -6,14 +6,17 @@
       <input type="text" placeholder="输入城市/经典/游玩古迹">
     </div>
     <div class="header_right iconfont">
-      <span>上海</span>&#xe600;
+      <span>{{city}}</span>&#xe600;
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'homeHeader'
+  name: 'homeHeader',
+  props: {
+    city: String
+  }
 }
 </script>
 

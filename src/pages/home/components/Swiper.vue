@@ -36,16 +36,22 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-  .swiper >>> .swiper-pagination-bullet
-    opacity:1
-    background:#ccc
-  .swiper >>> .swiper-pagination-bullet-active
-    background:#fff
-  .swiper-slide
-    width:100%
-    height:0
-    padding-bottom:31.25%
-    .swiper_img
-      background:#ccc
+<style scoped>
+  .swiper >>> .swiper-pagination-bullet{
+    opacity:1;
+    background:#ccc;
+  }
+  .swiper >>> .swiper-pagination-bullet-active{
+    background:#fff;
+  }
+  .swiper-slide{
+    overflow: hidden;
+    width:100%;
+    height:0;
+    padding-bottom:31.25%;
+  }
+  .swiper-slide img{width:100%;}
+  .swiper_img{
+    background:#ccc;
+  }
 </style>

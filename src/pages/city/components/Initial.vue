@@ -1,7 +1,7 @@
 <template>
   <div class="initial">
     <ul>
-      <li v-for="(item,key) in cities" :key="key">{{key}}</li>
+      <li v-for="(item,key) in cities" :key="key" @click="changeLetter">{{key}}</li>
     </ul>
   </div>
 </template>
@@ -11,6 +11,11 @@ export default {
   name: 'cityInitial',
   props: {
     cities: Object
+  },
+  methods: {
+    changeLetter (e) {
+      this.$emit("toMove",e.target.innerHTML)
+    }
   }
 }
 </script>
@@ -28,5 +33,6 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: -1;
   }
 </style>

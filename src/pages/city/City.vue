@@ -1,9 +1,9 @@
 <template>
   <div>
     <city-header></city-header>
-    <city-search></city-search>
-    <city-list :hot="hot" :cities="cities"></city-list>
-    <city-initial :cities="cities"></city-initial>
+    <city-search :cities="cities"></city-search>
+    <city-list :hot="hot" :cities="cities" :letter="letter"></city-list>
+    <city-initial :cities="cities" @toMove="toMove"></city-initial>
   </div>
 </template>
 
@@ -25,7 +25,8 @@ export default {
   data () {
     return {
       hot: [],
-      cities: {}
+      cities: {},
+      letter: ''
     }
   },
   methods: {
@@ -39,6 +40,9 @@ export default {
               self.cities = rs.cities
             }
           })
+    },
+    toMove (letter) {
+      this.letter = letter
     }
   },
   mounted () {

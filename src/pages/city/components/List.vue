@@ -13,7 +13,7 @@
           <li v-for="item in hot" :key="item.id">{{item.name}}</li>
         </ul>
       </section>
-      <section v-for="(item,key) in cities" :key="key">
+      <section v-for="(item,key) in cities" :key="key" :ref="key">
         <h1 class="border-topbottom">{{key}}</h1>
         <ul class="list_wrapper_v">
           <li class="border-bottom" v-for="city in item" :key="city.id">{{city.name}}</li>
@@ -30,10 +30,17 @@ export default {
   name: 'cityList',
   props: {
     hot: Array,
-    cities: Object
+    cities: Object,
+    letter: String
   },
   mounted () {
     this.scroll = new BScroll (this.$refs.wrapper)
+  },
+  watch: {
+    letter () {
+      const element = this.$refs[this.letter][0]
+      this.scroll.scrollToElement(element)
+    }
   }
 }
 </script>

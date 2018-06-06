@@ -5,9 +5,11 @@
       <span class="iconfont">&#xe632;</span>
       <input type="text" placeholder="输入城市/经典/游玩古迹">
     </div>
-    <div class="header_right iconfont">
-      <span>{{city}}</span>&#xe600;
-    </div>
+    <router-link to="/city">
+      <div class="header_right iconfont">
+        <span>{{city}}</span>&#xe600;
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -50,4 +52,5 @@ export default {
       float:right
       width:15%
       font-size:0.24rem
+      color:#fff
 </style>

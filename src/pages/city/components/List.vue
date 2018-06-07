@@ -66,7 +66,7 @@ export default {
   .list_wrapper{padding:0.1rem 0.6rem 0.1rem 0;font-size: 0;;}
   .list_wrapper li{
     display: inline-block;
-    width: 30%;
+    width: 28%;
     border:0.02rem solid #ccc;
     text-align: center;
     padding: 0.06rem 0;

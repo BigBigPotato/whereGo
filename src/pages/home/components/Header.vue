@@ -7,7 +7,7 @@
     </div>
     <router-link to="/city">
       <div class="header_right iconfont">
-        <span>{{city}}</span>&#xe600;
+        <span>{{city}}</span>&#xe64a;
       </div>
     </router-link>
   </div>

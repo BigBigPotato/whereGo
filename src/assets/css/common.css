@@ -8,6 +8,8 @@
 }
 .font_hidden{
 	overflow: hidden;
-	word-wrap: nowrap;
+	white-space: nowrap;
 	text-overflow: ellipsis;
 }
+.pull_left{float: left;}
+.pull_right{float: right;}

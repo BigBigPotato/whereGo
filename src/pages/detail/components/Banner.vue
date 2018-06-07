@@ -11,16 +11,19 @@
         </div>
       </div>
     </div>
-    <gallery 
-      v-show="galleryFlag" 
-      @toHide="toHideGallery" 
-      :imgArr="gallaryImgs"
-    ></gallery>
+    <fadeAnimation>
+      <gallery 
+        v-show="galleryFlag" 
+        @toHide="toHideGallery" 
+        :imgArr="gallaryImgs"
+      ></gallery>
+    </fadeAnimation>
   </div>
 </template>
 
 <script>
 import Gallery from '@/pages/common/Gallery'
+import fadeAnimation from '@/pages/common/Fade'
 
 export default {
   name: 'Banner',
@@ -30,7 +33,8 @@ export default {
     gallaryImgs: Array
   },
   components: {
-    Gallery
+    Gallery,
+    fadeAnimation
   },
   data () {
     return {

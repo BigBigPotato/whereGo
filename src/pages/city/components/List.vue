@@ -4,19 +4,32 @@
       <section>
         <h1 class="border-topbottom">当前城市</h1>
         <ul class="list_wrapper">
-          <li>北京</li>
+          <li>{{city}}</li>
         </ul>
       </section>
       <section>
         <h1 class="border-topbottom">热门城市</h1>
         <ul class="list_wrapper">
-          <li v-for="item in hot" :key="item.id">{{item.name}}</li>
+          <li 
+            v-for="item in hot" 
+            :key="item.id"
+            @click="changeCity(item.name)"
+          >
+            {{item.name}}
+          </li>
         </ul>
       </section>
       <section v-for="(item,key) in cities" :key="key" :ref="key">
         <h1 class="border-topbottom">{{key}}</h1>
         <ul class="list_wrapper_v">
-          <li class="border-bottom" v-for="city in item" :key="city.id">{{city.name}}</li>
+          <li 
+            class="border-bottom" 
+            v-for="city in item" 
+            :key="city.id"
+            @click="changeCity(city.name)"
+          >
+            {{city.name}}
+          </li>
         </ul>
       </section>
   </div>
@@ -25,6 +38,7 @@
 
 <script>
 import BScroll from 'better-scroll'
+import { mapState } from 'vuex'
 
 export default {
   name: 'cityList',
@@ -33,8 +47,17 @@ export default {
     cities: Object,
     letter: String
   },
+  computed: {
+    ...mapState(['city'])
+  },
   mounted () {
     this.scroll = new BScroll (this.$refs.wrapper)
+  },
+  methods: {
+    changeCity (city) {
+      this.$store.dispatch('toChangeCity',city)
+      this.$router.push('/')
+    }
   },
   watch: {
     letter () {

@@ -5,7 +5,14 @@
     </div>
     <div ref="res" class="search_result" v-show="keyword">
       <ul>
-        <li class="border-bottom" v-for="item in list" :key="item.id">{{item.name}}</li>
+        <li 
+          class="border-bottom" 
+          v-for="item in list" 
+          :key="item.id"
+          @click="changeCity(item.name)"
+        >
+          {{item.name}}
+        </li>
         <li v-show="show">找不到数据</li>
       </ul>
     </div>
@@ -14,6 +21,7 @@
 
 <script>
 import Bscroll from 'better-scroll'
+import { mapState,mapMutations } from 'vuex'
 
 export default {
   name: 'citySearch',
@@ -33,6 +41,14 @@ export default {
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.res)
+  },
+  methods: {
+    changeCity (city) {
+      this.toChangeCity(city)
+      this.$router.push('/')
+      this.keyword = ''
+    },
+    ...mapMutations(['toChangeCity'])
   },
   watch: {
     keyword (value) {
